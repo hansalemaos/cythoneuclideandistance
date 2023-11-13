@@ -53,7 +53,7 @@ def cdistecl(np.int32_t[:] coords, np.int32_t[:] seq, np.float32_t[:] a, int num
     cdef int x0, y0, x1, y1
     cdef float di,aa,bb
     cdef int coord, element, h
-    for coord in prange(0, num_coords-1, 1,nogil=True):
+    for coord in prange(0, num_coords-1, 2,nogil=True):
         x0 = coords[coord]
         y0 = coords[coord + 1]
         for element in range(0, num_seq, 1):
